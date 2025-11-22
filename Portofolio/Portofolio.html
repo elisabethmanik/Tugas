@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Elisabeth Manik</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(120deg, #0f0f17, #1a1a2e, #16213e);
+      background-size: 300% 300%;
+      animation: bgFlow 10s infinite alternate;
+      color: #eee;
+      overflow-x: hidden;
+    }
+
+    @keyframes bgFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .header-section {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      padding: 70px 50px;
+      justify-content: center;
+    }
+
+    /* LEFT */
+    .left { text-align: center; }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 0 25px rgba(255,255,255,0.3);
+    }
+
+    .name { margin-top: 15px; font-size: 28px; font-weight: bold; }
+    .status { font-size: 18px; opacity: 0.8; }
+
+    /* RIGHT */
+    .right {
+      max-width: 600px;
+      padding-top: 20px;
+    }
+
+    .right h2 { font-size: 30px; margin-bottom: 20px; color: #fff; }
+
+    .right p {
+      line-height: 1.8;
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    /* Social icons */
+    .social-icons {
+      display: flex;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .social-icons img {
+      width: 36px;
+      height: 36px;
+      transition: 0.3s;
+    }
+
+    .social-icons img:hover { transform: scale(1.15); }
+
+    /* Cards */
+    .card {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 40px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: translateY(60px);
+      transition: 0.9s ease;
+    }
+
+    .card.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      border-left: 5px solid #8d4bff;
+      padding-left: 12px;
+    }
+
+    /* Timeline */
+    .timeline {
+      border-left: 3px solid rgba(255,255,255,0.2);
+      margin-left: 20px;
+      padding-left: 25px;
+    }
+
+    .timeline-item {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      width: 14px;
+      height: 14px;
+      background: #a674ff;
+      border-radius: 50%;
+      position: absolute;
+      left: -32px;
+      top: 5px;
+    }
+
+    /* Skills */
+    .skills span {
+      display: inline-block;
+      background: linear-gradient(135deg, #8d4bff, #5c34ff);
+      padding: 10px 18px;
+      border-radius: 25px;
+      color: #fff;
+      margin: 6px;
+      font-size: 15px;
+      box-shadow: 0 0 10px rgba(140,80,255,0.5);
+    }
+
+    /* Projects */
+    .projects { padding: 60px 20px; text-align: center; }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .project-card {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .proj-img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      margin-top: 80px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header-section">
+  <div class="left">
+    <img src="photo.jpg" class="profile-img" />
+    <div class="name">Elisabeth Manik</div>
+    <div class="status">Mahasiswa</div>
+  </div>
+
+  <div class="right">
+    <h2>About Me</h2>
+    <p>I am an active college student with a strong interest in technology, administration, and data management. I am a fast learner, highly adaptable, and able to work well in a team with good communication skills. Detail-oriented in handling documents, experienced in Microsoft Office, and eager to expand my IT skills.</p>
+
+    <div class="social-icons">
+      <a href="https://www.instagram.com/czescel?igsh=MTlhcTlhZXVkdjlndA==" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"></a>
+      <a href="https://www.linkedin.com/in/elisabethmanik-undefined-615a43282" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="card reveal">
+  <h2>Education</h2>
+  <div class="timeline">
+    <div class="timeline-item"><strong>Senior High School – Science</strong><br>SMAN 30 Kab. Tangerang</div>
+    <div class="timeline-item"><strong>Bachelor of Informatics Engineering (In Progress)</strong><br>Universitas Pamulang</div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="card reveal">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item"><strong>Data Mining Project</strong><br>Performed preprocessing, modeling, and evaluation using RapidMiner.</div>
+    <div class="timeline-item"><strong>UI/UX Design Training with Figma</strong><br>Interactive design workshop for high school students at SMA Al-Hasra Depok.</div>
+    <div class="timeline-item"><strong>Administrative Assistant – GNTDesign</strong><br>Handled documentation, scheduling, and team communication support.</div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section class="projects">
+  <h2>Academic Project</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="project1.png" class="proj-img">
+      <h3>Data Mining Project</h3>
+      <p>Worked with datasets, preprocessing, training/testing split, and algorithm evaluation using RapidMiner.</p>
+    </div>
+
+    <div class="project-card">
+      <img src="project2.jpg" class="proj-img">
+      <h3>UI/UX Training Project</h3>
+      <p>Developed hands-on UI/UX class using Figma for high school students to improve digital creativity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<div class="card reveal">
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>Adaptable</span>
+    <span>Good Communication</span>
+    <span>Time Management</span>
+    <span>Teamwork</span>
+    <span>Administration</span>
+    <span>Problem Solving</span>
+  </div>
+</div>
+
+<script>
+  function reveal() {
+    var reveals = document.querySelectorAll('.card');
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      if (elementTop < windowHeight - 150) reveals[i].classList.add('active');
+    }
+  }
+  window.addEventListener('scroll', reveal);
+  reveal();
+</script>
+
+<footer>
+  © 2025 | Portfolio Elisabeth Manik | Dibuat dengan HTML + CSS
+</footer>
+
+</body>
+</html>
