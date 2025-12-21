@@ -1,0 +1,319 @@
+/* ================= RESET ================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ================= BODY ================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding-top: 90px;
+
+    background: linear-gradient(
+        135deg,
+        #ff9eb5,
+        #ffc8d9,
+        #ffe3ee,
+        #d1faff,
+        #ffecd2
+    );
+    background-size: 300%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0%; }
+    50% { background-position: 100%; }
+    100% { background-position: 0%; }
+}
+
+/* ================= HEADER ================= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+
+    background: rgba(255, 190, 209, 0.95);
+    backdrop-filter: blur(6px);
+
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 4px 15px rgba(255, 150, 200, 0.35);
+}
+
+header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #8c0042;
+}
+
+/* ================= NAV ================= */
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav button {
+    background: linear-gradient(135deg, #ffffff, #ffe6f2);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #8c0042;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    transform: scale(1.05);
+}
+
+/* ================= HERO ================= */
+.hero {
+    padding: 40px 15px 30px;
+}
+
+.hero h2 {
+    font-size: clamp(24px, 5vw, 36px);
+    color: #d1006c;
+    margin-bottom: 10px;
+}
+
+/* ================= PRODUCTS ================= */
+.products h2 {
+    margin: 60px 0 40px;
+    color: #c70063;
+}
+
+.product-list {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+/* ================= PRODUCT CARD ================= */
+.product-card {
+    background: white;
+    padding: 14px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(255, 170, 210, 0.4);
+    transition: 0.3s;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+/* ================= BADGE ================= */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background: linear-gradient(135deg, #ff5fa2, #ff2d55);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 0 12px 12px 0;
+}
+
+/* ================= BUTTON ================= */
+button {
+    background: linear-gradient(145deg, #ff85b8, #ffafd6);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer; 
+}
+
+button:hover {
+    transform: scale(1.07);
+}
+
+/* ================= REVIEW MARQUEE ================= */
+/* ================= REVIEW MARQUEE FIX ================= */
+.review-marquee {
+    width: 100%;
+    overflow: hidden;
+    margin: 40px 0;
+}
+
+.marquee-track {
+    display: inline-flex;
+    white-space: nowrap;
+    gap: 20px;
+    animation: marqueeScroll 25s linear infinite;
+}
+
+.marquee-track img {
+    width: 140px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    flex-shrink: 0;
+}
+
+@keyframes marqueeScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+ 
+
+
+/* ================= SAKURA (HUJAN) ================= */
+#sakura-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.sakura {
+    position: absolute;
+    top: -40px;
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+    animation: sakuraFall linear infinite;
+}
+
+@keyframes sakuraFall {
+    from {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* ================= FOOTER ================= */
+footer {
+    margin-top: 50px;
+    background: #ffd6e8;
+    padding: 20px;
+    color: #a30058;
+    font-weight: 600;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+    .checkout-form {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-form label {
+        text-align: left;
+    }
+
+    .total-box,
+    .form-actions {
+        grid-column: span 1;
+    }
+}
+
+/* ================= POPUP FIX ================= */
+.popup-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-bg.active {
+    display: flex;
+}
+
+.popup-box {
+    background: white;
+    width: 90%;
+    max-width: 420px;
+    max-height: 85vh;
+    overflow-y: auto;
+
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+.checkout-form {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 12px 12px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.checkout-form label {
+    text-align: right;
+    font-weight: 600;
+    color: #8c0042;
+}
+
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ffb6d9;
+    background: #fff7fb;
+    font-size: 14px;
+}
+
+.checkout-form textarea {
+    resize: none;
+    height: 70px;
+}
+
+.total-box {
+    grid-column: span 2;
+    margin-top: 10px;
+    padding: 12px;
+    background: #fff0f7;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #c70063;
+    text-align: center;
+}
+
+.form-actions {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}

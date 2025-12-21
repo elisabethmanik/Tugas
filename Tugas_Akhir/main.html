@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandwich Sandalan</title>
+
+<link rel="stylesheet" href="style-v2.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+
+<div id="sakura-container"></div>
+
+<!-- ================== HEADER ================== -->
+<header>
+    <h1>🍰 SANDWICH SANDALAN</h1>
+
+    <nav>
+        <button onclick="openAbout()">Tentang Kami</button>
+
+        <button onclick="openCart()" class="cart-btn">
+            Keranjang
+            <span id="cartCount" class="cart-badge">0</span>
+        </button>
+
+        <button onclick="openCheckout()">Checkout</button>
+    </nav>
+</header>
+
+<!-- ================== HERO ================== -->
+<section class="hero">
+    <h2>SANDALAN</h2>
+    <p>Segar & Manis! Bikin Mood Langsung Naik 😉</p>
+</section>
+
+
+<!-- ================== PRODUK ================== -->
+<section class="products">
+    <h2>Produk Kami</h2>
+
+    <div class="product-list">
+
+        <div class="product-card best">
+             <span class="badge">BEST SELLER</span>
+            <img src="photo.jpg" alt="Special">
+            <h3>Elisabeth</h3>
+            <p class="price">Rp 999.999</p>
+            <button onclick="addToCart('Elisabeth Special')">Masukkan Keranjang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="mangga.jpg" alt="Mangga">
+            <h3>Mangga</h3>
+            <p class="price">Rp 12.000</p>
+            <button onclick="addToCart('Mangga')">Masukkan Keranjang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="anggur.jpg" alt="Anggur">
+            <h3>Anggur</h3>
+            <p class="price">Rp 12.000</p>
+            <button onclick="addToCart('Anggur')">Masukkan Keranjang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="oreo.jpg" alt="Oreo">
+            <h3>Oreo</h3>
+            <p class="price">Rp 10.000</p>
+            <button onclick="addToCart('Oreo')">Masukkan Keranjang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="mix.jpg" alt="Mix">
+            <h3>Mix</h3>
+            <p class="price">Rp 15.000</p>
+            <button onclick="addToCart('Mix')">Masukkan Keranjang</button>
+        </div>
+
+
+    </div>
+</section>
+
+<section class="review-marquee">
+    <div class="marquee-track">
+        <img src="R1.jpg">
+        <img src="R2.jpg">
+        <img src="R3.jpg">
+        <img src="R4.jpg">
+        <img src="R5.jpg">
+        <img src="R6.jpg">
+        <img src="R7.jpg">
+        <img src="R8.jpg">
+        <img src="R9.jpg">
+        <img src="R10.jpg">
+        <img src="R11.jpg">
+        <img src="R12.jpg">
+        <img src="R13.jpg">
+        <img src="R14.jpg">
+
+        
+        <img src="R1.jpg">
+        <img src="R2.jpg">
+        <img src="R3.jpg">
+        <img src="R4.jpg">
+        <img src="R5.jpg">
+        <img src="R6.jpg">
+        <img src="R7.jpg">
+        <img src="R8.jpg">
+        <img src="R9.jpg">
+        <img src="R10.jpg">
+        <img src="R11.jpg">
+        <img src="R12.jpg">
+        <img src="R13.jpg">
+        <img src="R14.jpg">
+    </div>
+</section>
+
+<!-- ================== POPUP KERANJANG ================== -->
+<div class="popup-bg" id="cartPopup">
+    <div class="popup-box">
+        <h3>Keranjang Belanja</h3>
+
+        <ul id="cartList"></ul>
+
+        <button onclick="closeCart()">Tutup</button>
+    </div>
+</div>
+
+<!-- ================== POPUP CHECKOUT  ================== -->
+<div class="popup-bg" id="checkoutPopup">
+    <div class="popup-box">
+        <h3>Checkout</h3>
+
+        <form class="checkout-form">
+
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="wa">Nomor WA</label>
+            <input type="text" id="wa" name="wa" required>
+
+            <label for="produk">Produk</label>
+            <textarea id="produkCheckout" readonly></textarea>
+
+            <label for="alamat">Alamat Lengkap</label>
+            <textarea id="alamat" name="alamat" required></textarea>
+
+            <label for="catatan">Catatan</label>
+            <textarea id="catatan"></textarea>
+            
+            <label for="pengiriman">Metode Pengiriman</label>
+<select id="pengiriman" required>
+    <option value="">-- Pilih --</option>
+    <option value="COD">COD (Bayar di Tempat)</option>
+    <option value="Ambil Sendiri">Ambil Sendiri</option>
+</select>
+
+            <!-- TOTAL HARGA -->
+            <div class="total-box">
+                <strong>Total Harga:</strong>
+                <span id="totalHarga">Rp 0</span>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit">Kirim</button>
+                <button type="button" onclick="closeCheckout()">Batal</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- ================== POPUP TENTANG KAMI ================== -->
+<div class="popup-bg" id="aboutPopup">
+    <div class="popup-box">
+        <h3>Tentang Kami</h3>
+        <p>
+            Sebagai pecinta makanan manis dan fresh, ini adalah dessert impian saya! 🤩  
+            <br><br>
+            Sandwich Buah Premium dengan roti super lembut, krim creamy, dan buah segar pilihan.
+            <br><br>
+            Bukan sekadar cemilan, tapi <b>kenikmatan manis yang menyegarkan</b> ✨
+        </p>
+
+        <button onclick="closeAbout()">Tutup</button>
+    </div>
+</div>
+<!-- ================== POPUP TERIMA KASIH ================== -->
+<div class="popup-bg" id="thanksPopup">
+    <div class="popup-box small">
+        <h3>Terima Kasih 🌸</h3>
+        <p>
+            Pesanan kamu sudah dikirim ke WhatsApp kami.<br>
+            Kami akan segera memproses pesananmu 💖
+        </p>
+        <button onclick="closeThanks()">Tutup</button>
+    </div>
+</div>
+
+
+<!-- ================== FOOTER ================== -->
+<footer>
+    <p>🌸 Azzahra Dwi Rizky Faradilla – IG @anyeolla • 2025</p>
+</footer>
+<div id="toast" class="toast"></div>
+
+</body>
+</html>
